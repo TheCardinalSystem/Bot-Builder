@@ -18,8 +18,6 @@ public class ItemExport extends JMenuItem {
 	/**
 	 * Constructs a new {@link JMenuItem} with an
 	 * {@link ExportAciton}-{@link ActionListener}.
-	 * 
-	 * @see ItemExport#getParent2()
 	 */
 	public ItemExport() {
 		super("Export");

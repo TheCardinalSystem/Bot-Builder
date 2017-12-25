@@ -18,8 +18,6 @@ public class ItemProject extends JMenuItem {
 	/**
 	 * Constructs a new {@link JMenuItem} with a
 	 * {@link ProjectAction}-{@link ActionListener}.
-	 * 
-	 * @see ItemProject#getParent2()
 	 */
 	public ItemProject() {
 		super("Project");

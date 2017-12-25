@@ -52,7 +52,7 @@ public class MainFrame extends JFrame {
 
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLayout(new BorderLayout());
-		this.setJMenuBar(new DefaultMenuBar(this));
+		this.setJMenuBar(new DefaultMenuBar());
 		this.add(new ControlPanel(), BorderLayout.EAST);
 		this.add(new VisualPanel(), BorderLayout.CENTER);
 		this.setVisible(true);

@@ -20,6 +20,7 @@ public interface ITask {
 	
 	/**
 	 * Creates an ordered array of {@link ITask} objects.
+	 * @param firstTask the first element to place in the array.
 	 * @param inOrderOfExecution the tasks to add to the array. Pass in order of desired execution.
 	 * @return the ordered array.
 	 */

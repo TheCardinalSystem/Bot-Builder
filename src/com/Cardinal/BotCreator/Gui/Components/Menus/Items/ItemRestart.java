@@ -21,8 +21,6 @@ public class ItemRestart extends JMenuItem {
 	/**
 	 * Constructs a new {@link JMenuItem} with a
 	 * {@link RestartAction}-{@link ActionListener}.
-	 * 
-	 * @see ItemRestart#getParent2()
 	 */
 	public ItemRestart() {
 		super("Restart");

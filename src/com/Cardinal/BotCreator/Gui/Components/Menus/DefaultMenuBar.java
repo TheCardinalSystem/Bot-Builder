@@ -1,13 +1,12 @@
 package com.Cardinal.BotCreator.Gui.Components.Menus;
 
-import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 
 /**
  * The default {@link JMenuBar} for the bot creator GUI.
  * 
  * @author Cardinal System
- * @see DefaultMenuBar#DefaultMenuBar(JFrame)
+ * @see DefaultMenuBar#DefaultMenuBar()
  */
 public class DefaultMenuBar extends JMenuBar {
 
@@ -16,7 +15,7 @@ public class DefaultMenuBar extends JMenuBar {
 	/**
 	 * Constructs a new {@link JMenuBar} with a {@link MenuFile} menu.
 	 */
-	public DefaultMenuBar(JFrame parent) {
+	public DefaultMenuBar() {
 		super();
 		this.add(new MenuFile());
 	}

@@ -1,7 +1,5 @@
 package com.Cardinal.BotCreator.Gui.Components.Menus;
-
 import javax.swing.JMenu;
-import javax.swing.JMenuBar;
 
 import com.Cardinal.BotCreator.Gui.Components.Menus.Items.ItemClose;
 import com.Cardinal.BotCreator.Gui.Components.Menus.Items.ItemExport;
@@ -13,7 +11,7 @@ import com.Cardinal.BotCreator.Gui.Components.Menus.Items.SubMenus.MenuNew;
  * One of the default menus of the bot creator GUI.
  * 
  * @author Cardinal System
- * @see MenuFile#MenuFile(JMenuBar)
+ * @see MenuFile#MenuFile()
  */
 public class MenuFile extends JMenu {
 

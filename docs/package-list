@@ -1,0 +1,13 @@
+com.Cardinal.BotCreator.AssetHandlers
+com.Cardinal.BotCreator.Gui.Borders
+com.Cardinal.BotCreator.Gui.Components.Cells
+com.Cardinal.BotCreator.Gui.Components.Menus
+com.Cardinal.BotCreator.Gui.Components.Menus.Items
+com.Cardinal.BotCreator.Gui.Components.Menus.Items.SubMenus
+com.Cardinal.BotCreator.Gui.Components.Menus.Items.SubMenus.Items
+com.Cardinal.BotCreator.Gui.Frames
+com.Cardinal.BotCreator.Gui.Panels
+com.Cardinal.BotCreator.Gui.Panels.SubPanels
+com.Cardinal.BotCreator.Task
+com.Cardinal.BotCreator.Task.Tasks
+com.Cardinal.BotCreator.Utils
