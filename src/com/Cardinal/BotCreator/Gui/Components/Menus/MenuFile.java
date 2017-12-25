@@ -20,34 +20,18 @@ public class MenuFile extends JMenu {
 	private static final long serialVersionUID = 5368242730909706494L;
 
 	/**
-	 * The parent {@link JMenuBar} of this menu.
-	 */
-	private JMenuBar parent;
-
-	/**
 	 * Constructs a new {@link JMenu} with a {@link MenuNew} sub-menu,
 	 * {@link ItemExport} item, {@link ItemImport} item, {@link ItemRestart} item,
 	 * and {@link ItemClose} item.
 	 * 
-	 * @param parent
-	 *            the parent {@link JMenuBar} of this menu.
 	 */
-	public MenuFile(JMenuBar parent) {
+	public MenuFile() {
 		super("File");
-		this.parent = parent;
-		this.add(new MenuNew(this));
-		this.add(new ItemExport(this));
-		this.add(new ItemImport(this));
-		this.add(new ItemRestart(this));
-		this.add(new ItemClose(this));
+		this.add(new MenuNew());
+		this.add(new ItemExport());
+		this.add(new ItemImport());
+		this.add(new ItemRestart());
+		this.add(new ItemClose());
 	}
 
-	/**
-	 * Gets the parent {@link JMenuBar} of this menu.
-	 * 
-	 * @return the parent {@link JMenuBar} of this menu,
-	 */
-	public JMenuBar getParent2() {
-		return this.parent;
-	}
 }
