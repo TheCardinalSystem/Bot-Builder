@@ -10,6 +10,8 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
 import com.Cardinal.BotCreator.Gui.Components.Menus.DefaultMenuBar;
+import com.Cardinal.BotCreator.Gui.Panels.ControlPanel;
+import com.Cardinal.BotCreator.Gui.Panels.VisualPanel;
 
 /**
  * The default window/{@linkplain JFrame} of the bot creator GUI.
@@ -38,8 +40,9 @@ public class MainFrame extends JFrame {
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		double width = screenSize.getWidth();
 		double height = screenSize.getHeight();
-		this.setSize(new Dimension(Math.toIntExact(Math.round(width / 2)), Math.toIntExact(Math.round(height / 2))));
-
+		this.setSize((int)width / 2, (int)height / 2);
+		this.setLocation((int)width/4, (int)height/4);
+		
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException
@@ -50,6 +53,8 @@ public class MainFrame extends JFrame {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLayout(new BorderLayout());
 		this.setJMenuBar(new DefaultMenuBar(this));
+		this.add(new ControlPanel(), BorderLayout.EAST);
+		this.add(new VisualPanel(), BorderLayout.CENTER);
 		this.setVisible(true);
 	}
 

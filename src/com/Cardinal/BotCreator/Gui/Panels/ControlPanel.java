@@ -1,7 +1,10 @@
 package com.Cardinal.BotCreator.Gui.Panels;
 
+import java.awt.BorderLayout;
+
 import javax.swing.JPanel;
 
+import com.Cardinal.BotCreator.Gui.Borders.BorderLibrary;
 import com.Cardinal.BotCreator.Gui.Components.Menus.DefaultMenuBar;
 import com.Cardinal.BotCreator.Gui.Panels.SubPanels.ControlLower;
 import com.Cardinal.BotCreator.Gui.Panels.SubPanels.ControlUpper;
@@ -33,4 +36,15 @@ public class ControlPanel extends JPanel {
 
 	private static final long serialVersionUID = -6488397793640482079L;
 
+	/**
+	 * Constructs a new {@link ControlPanel} ({@linkplain JPanel}) with a
+	 * {@link ControlUpper} and a {@link ControlLower}.
+	 */
+	public ControlPanel() {
+		super();
+		this.setLayout(new BorderLayout());
+		this.add(new ControlUpper(), BorderLayout.NORTH);
+		this.add(new ControlLower(), BorderLayout.SOUTH);
+		this.setBorder(BorderLibrary.RAISED.getBorder());
+	}
 }
