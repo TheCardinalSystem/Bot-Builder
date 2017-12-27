@@ -6,8 +6,8 @@ import javax.swing.JPanel;
 
 import com.Cardinal.BotCreator.Gui.Borders.BorderLibrary;
 import com.Cardinal.BotCreator.Gui.Components.Menus.DefaultMenuBar;
-import com.Cardinal.BotCreator.Gui.Panels.SubPanels.ControlLower;
-import com.Cardinal.BotCreator.Gui.Panels.SubPanels.ControlUpper;
+import com.Cardinal.BotCreator.Gui.Panels.Sub.ControlLower;
+import com.Cardinal.BotCreator.Gui.Panels.Sub.ControlUpper;
 
 /**
  * The left panel of the main frame. Divided vertically into two halves, each
@@ -38,13 +38,19 @@ public class ControlPanel extends JPanel {
 
 	/**
 	 * Constructs a new {@link ControlPanel} ({@linkplain JPanel}) with a
-	 * {@link ControlUpper} and a {@link ControlLower}.
+	 * {@link ControlUpper} and a {@link ControlLower}. The layout will be constructed with the
+	 * specified gaps between components.
+	 * 
+	 * @param hgap
+	 *            the horizontal gap.
+	 * @param vgap
+	 *            the vertical gap.
 	 */
-	public ControlPanel() {
+	public ControlPanel(int hgap, int vgap) {
 		super();
-		this.setLayout(new BorderLayout());
-		this.add(new ControlUpper(), BorderLayout.NORTH);
-		this.add(new ControlLower(), BorderLayout.SOUTH);
+		this.setLayout(new BorderLayout(hgap, vgap));
+		this.add(new ControlUpper(vgap, vgap), BorderLayout.NORTH);
+		this.add(new ControlLower(vgap, vgap), BorderLayout.SOUTH);
 		this.setBorder(BorderLibrary.RAISED.getBorder());
 	}
 }

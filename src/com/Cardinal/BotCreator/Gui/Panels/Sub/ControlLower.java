@@ -1,4 +1,6 @@
-package com.Cardinal.BotCreator.Gui.Panels.SubPanels;
+package com.Cardinal.BotCreator.Gui.Panels.Sub;
+
+import java.awt.BorderLayout;
 
 import javax.swing.JPanel;
 
@@ -16,12 +18,19 @@ public class ControlLower extends JPanel {
 	private static final long serialVersionUID = 9080533032827681441L;
 
 	/**
-	 * Constructs a new {@link ControlLower} ({@linkplain JPanel}).
+	 * Constructs a new {@link ControlLower} ({@linkplain JPanel}). The layout will be constructed with the
+	 * specified gaps between components.
+	 * 
+	 * @param hgap
+	 *            the horizontal gap.
+	 * @param vgap
+	 *            the vertical gap.
 	 * 
 	 * @see ControlPanel
 	 */
-	public ControlLower() {
+	public ControlLower(int hgap, int vgap) {
 		super();
+		this.setLayout(new BorderLayout(hgap, vgap));
 		this.setBorder(BorderLibrary.NORMAL.getBorder());
 	}
 }

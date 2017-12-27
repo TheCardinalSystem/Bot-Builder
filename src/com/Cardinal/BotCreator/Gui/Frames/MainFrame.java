@@ -30,7 +30,7 @@ public class MainFrame extends JFrame {
 	/**
 	 * Constructs a new {@link JFrame} with a
 	 * {@link DefaultMenuBar}-{@link JMenuBar}. This constructor sets the frame size
-	 * to half of the screen size, and centers it accordingly.
+	 * to half of the screen size, and centers it accordingly. 
 	 * 
 	 * @param frameName the name of this window/{@linkplain JFrame}
 	 */
@@ -53,7 +53,7 @@ public class MainFrame extends JFrame {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLayout(new BorderLayout());
 		this.setJMenuBar(new DefaultMenuBar());
-		this.add(new ControlPanel(), BorderLayout.EAST);
+		this.add(new ControlPanel(5, 5), BorderLayout.EAST);
 		this.add(new VisualPanel(), BorderLayout.CENTER);
 		this.setVisible(true);
 	}

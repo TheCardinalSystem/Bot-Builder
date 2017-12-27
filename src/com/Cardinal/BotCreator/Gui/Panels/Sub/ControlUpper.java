@@ -1,4 +1,4 @@
-package com.Cardinal.BotCreator.Gui.Panels.SubPanels;
+package com.Cardinal.BotCreator.Gui.Panels.Sub;
 
 import java.awt.BorderLayout;
 import java.util.HashMap;
@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import com.Cardinal.BotCreator.Gui.Borders.BorderLibrary;
 import com.Cardinal.BotCreator.Gui.Components.Cells.ComboBoxCell;
 import com.Cardinal.BotCreator.Gui.Components.Cells.ComboBoxCellRenderer;
+import com.Cardinal.BotCreator.Gui.Components.Cells.Default.EventCell;
 import com.Cardinal.BotCreator.Gui.Panels.ControlPanel;
 
 /**
@@ -34,15 +35,22 @@ public class ControlUpper extends JPanel {
 	/**
 	 * Constructs a new {@link ControlUpper} ({@linkplain JPanel}) with a
 	 * {@link BorderLibrary#NORMAL normal} border and {@link JComboBox} of
-	 * {@linkplain ComboBoxCell}s.
+	 * {@linkplain ComboBoxCell}s. The layout will be constructed with the
+	 * specified gaps between components.
 	 * 
+	 * @param hgap
+	 *            the horizontal gap.
+	 * @param vgap
+	 *            the vertical gap.
 	 * @see ControlPanel
 	 */
-	public ControlUpper() {
+	public ControlUpper(int hgap, int vgap) {
 		super();
-		this.setLayout(new BorderLayout());
+		this.setLayout(new BorderLayout(hgap, vgap));
+		this.setBorder(BorderLibrary.NORMAL.getBorder());
 		operations.setRenderer(new ComboBoxCellRenderer());
 		this.add(operations, BorderLayout.CENTER);
+		this.addCell(new EventCell());
 	}
 
 	/**

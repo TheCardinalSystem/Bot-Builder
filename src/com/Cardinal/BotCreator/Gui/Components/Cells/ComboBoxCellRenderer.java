@@ -26,8 +26,16 @@ public class ComboBoxCellRenderer implements ListCellRenderer<ComboBoxCell> {
 			boolean isSelected, boolean cellHasFocus) {
 
 		JLabel jlab = new JLabel();
-		jlab.setText(value.getName());
-		jlab.setIcon(value.getIcon());
+		try{
+			jlab.setText(value.getName());
+		}catch(NullPointerException e) {
+			e.printStackTrace();
+		}
+		try {
+			jlab.setIcon(value.getIcon());
+		}catch(NullPointerException e) {
+			e.printStackTrace();
+		}
 
 		return jlab;
 	}
