@@ -26,7 +26,7 @@ public class MainFrame extends JFrame {
 	}
 
 	private static final long serialVersionUID = -5257853932889784209L;
-
+	
 	/**
 	 * Constructs a new {@link JFrame} with a
 	 * {@link DefaultMenuBar}-{@link JMenuBar}. This constructor sets the frame size
@@ -53,7 +53,7 @@ public class MainFrame extends JFrame {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLayout(new BorderLayout());
 		this.setJMenuBar(new DefaultMenuBar());
-		this.add(new ControlPanel(5, 5), BorderLayout.EAST);
+		this.add(new ControlPanel(5, 5, this), BorderLayout.EAST);
 		this.add(new VisualPanel(), BorderLayout.CENTER);
 		this.setVisible(true);
 	}
