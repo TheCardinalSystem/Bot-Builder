@@ -6,6 +6,8 @@ import java.awt.Image;
 import java.awt.Rectangle;
 import java.awt.RenderingHints;
 import java.awt.Toolkit;
+import java.awt.geom.AffineTransform;
+import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
 
 import javax.swing.ImageIcon;
@@ -161,21 +163,6 @@ public class ImageUtils {
 		double w = (double) new ImageIcon(image).getIconWidth();
 		double nh = (double) desiredResize.getHeight();
 		double nw = (double) desiredResize.getWidth();
-		/*
-		 * float scaleWidth; float scaleHeight; float scaleFactor;
-		 * 
-		 * scaleWidth = (float)newWidth / origWidth; scaleHeight = (float)newHeight /
-		 * origHeight; scaleFactor = Math.min(scaleWidth,scaleHeight);
-		 * 
-		 * newWidth = Math.round(origWidth * scaleFactor); newWidth =
-		 * Math.round(origHeight * scaleFactor);
-		 */
-		/*
-		 * if(h < nh || nw > w){
-		 * 
-		 * while(nh > h){ h++; w++; } while(nw > w){ h++; w++; } } if(nh < h || nw < w){
-		 * while(h > nh){ h--; w--; } while(w > nw){ w--; h--; } }
-		 */
 		if (h > nh || w > nw) {
 			if (h > w) {
 				double percentH = (nh / h) * (double) 100;
@@ -210,10 +197,33 @@ public class ImageUtils {
 			}
 		}
 		return resizeImage(image, (int) nw, (int) nh);
+	}
 
-		/*
-		 * int diffH = nh - h; double percentH = diffH/h; double inc = percentH * h; h
-		 * += inc; w += inc;
-		 */
+	/**
+	 * Flips the given image horizontally or vertically depending on the boolean
+	 * passed.
+	 * 
+	 * @param image
+	 *            the image to flip
+	 * @param vertically
+	 *            specifies whether the image is to be flipped vertically or
+	 *            horizontally.
+	 * @return the flipped image.
+	 */
+	public static Image flip(Image image, boolean vertically) {
+		if (vertically) {
+			AffineTransform tx = AffineTransform.getScaleInstance(1, -1);
+			AffineTransformOp op = new AffineTransformOp(tx, AffineTransformOp.TYPE_NEAREST_NEIGHBOR);
+			tx.translate(0, -image.getHeight(null));
+			image = op.filter((BufferedImage) image, null);
+		} else {
+			AffineTransform tx = AffineTransform.getScaleInstance(-1, 1);
+			AffineTransformOp op = new AffineTransformOp(tx, AffineTransformOp.TYPE_NEAREST_NEIGHBOR);
+			tx.translate(-image.getWidth(null), 0);
+			op = new AffineTransformOp(tx, AffineTransformOp.TYPE_NEAREST_NEIGHBOR);
+			image = op.filter((BufferedImage) image, null);
+		}
+
+		return image;
 	}
 }

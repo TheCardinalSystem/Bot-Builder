@@ -7,8 +7,6 @@ import javax.swing.JPanel;
 import com.Cardinal.BotCreator.Gui.Borders.BorderLibrary;
 import com.Cardinal.BotCreator.Gui.Components.Menus.DefaultMenuBar;
 import com.Cardinal.BotCreator.Gui.Frames.MainFrame;
-import com.Cardinal.BotCreator.Gui.Panels.Sub.ControlLower;
-import com.Cardinal.BotCreator.Gui.Panels.Sub.ControlUpper;
 
 /**
  * The left panel of the main frame. Divided vertically into two halves, each

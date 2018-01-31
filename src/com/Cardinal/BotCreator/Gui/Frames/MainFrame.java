@@ -26,13 +26,15 @@ public class MainFrame extends JFrame {
 	}
 
 	private static final long serialVersionUID = -5257853932889784209L;
-	
+
 	/**
 	 * Constructs a new {@link JFrame} with a
-	 * {@link DefaultMenuBar}-{@link JMenuBar}. This constructor sets the frame size
-	 * to half of the screen size, and centers it accordingly. 
+	 * {@link DefaultMenuBar}-{@link JMenuBar}, a {@link ControlPanel}, and a
+	 * {@link VisualPanel}. This constructor sets the frame size to half of the
+	 * screen size, and centers it accordingly.
 	 * 
-	 * @param frameName the name of this window/{@linkplain JFrame}
+	 * @param frameName
+	 *            the name of this window/{@linkplain JFrame}
 	 */
 	public MainFrame(String frameName) {
 		super(frameName);
@@ -40,9 +42,9 @@ public class MainFrame extends JFrame {
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		double width = screenSize.getWidth();
 		double height = screenSize.getHeight();
-		this.setSize((int)width / 2, (int)height / 2);
-		this.setLocation((int)width/4, (int)height/4);
-		
+		this.setSize((int) width / 2, (int) height / 2);
+		this.setLocation((int) width / 4, (int) height / 4);
+
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException

@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JMenuItem;
 
 import com.Cardinal.BotCreator.Task.TaskManager;
-import com.Cardinal.BotCreator.Task.Tasks.TaskShutdown;
+import com.Cardinal.BotCreator.Task.Runtime.TaskShutdown;
 
 /**
  * One of the default menu items of the bot creator GUI.

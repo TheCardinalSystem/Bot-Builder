@@ -10,8 +10,8 @@ import javax.imageio.ImageIO;
 
 /**
  * The library of (default) image assets available for usage. Some images are
- * from Eclipse:
- * http://help.eclipse.org/kepler/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2Freference%2Fref-icons.htm
+ * from Eclipse: <a href=
+ * 'http://help.eclipse.org/kepler/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2Freference%2Fref-icons.htm'>http://help.eclipse.org/kepler/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2Freference%2Fref-icons.htm</a>
  * 
  * @author Cardinal System
  *
@@ -19,9 +19,17 @@ import javax.imageio.ImageIO;
 public enum ImageLibrary {
 
 	/**
-	 * Just a default value to be used until images are added.
+	 * The Eclipse annotation icon.
 	 */
-	ANNOTATION("Cells/annotation_obj.png");
+	ANNOTATION("Icons/annotation_obj.png"),
+	/**
+	 * The Eclipse generic file icon.
+	 */
+	FILE("Icons/file_obj.png"),
+	/**
+	 * The Eclipse "search match" icon.
+	 */
+	YELLOW_ARROW("Icons/searchm_obj.png");
 
 	/**
 	 * The image instance of 'this'.
