@@ -1,5 +1,7 @@
 package com.Cardinal.BotCreator.Gui.Components.Cells.Editor;
 
+import com.Cardinal.BotCreator.Gui.Components.Cells.Editor.Customizer.BackCell;
+
 /**
  * A template for a {@link HierarchyCell} handler.
  * 

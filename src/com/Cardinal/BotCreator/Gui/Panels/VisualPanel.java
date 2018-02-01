@@ -17,9 +17,9 @@ import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
 
 import com.Cardinal.BotCreator.Gui.Components.Cells.ComboBoxCellRenderer;
-import com.Cardinal.BotCreator.Gui.Components.Cells.Editor.BackCell;
 import com.Cardinal.BotCreator.Gui.Components.Cells.Editor.HierarchyCell;
 import com.Cardinal.BotCreator.Gui.Components.Cells.Editor.HierarchyCellHandler;
+import com.Cardinal.BotCreator.Gui.Components.Cells.Editor.Customizer.BackCell;
 import com.Cardinal.BotCreator.Gui.Components.Cells.Editor.File.FileCell;
 import com.Cardinal.BotCreator.Gui.Components.Fields.EditorTextField;
 import com.Cardinal.BotCreator.Gui.Components.Menus.DefaultMenuBar;
@@ -177,11 +177,15 @@ public class VisualPanel extends JPanel implements HierarchyCellHandler {
 		}
 
 		public void mouseClicked(MouseEvent evt) {
-			if (evt.getClickCount() >= 2) {
-				if (!methods.isSelectionEmpty()) {
+			if (!methods.isSelectionEmpty()) {
+				/*
+				 * if (methods.getSelectedValue().getChildren() == null && evt.getClickCount() >
+				 * 0) { methods.getSelectedValue().open(methods, field, panel); } else
+				 */if (evt.getClickCount() >= 2) {
 					methods.getSelectedValue().open(methods, field, panel);
 				}
 			}
+
 		}
 	}
 

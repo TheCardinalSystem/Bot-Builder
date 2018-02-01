@@ -65,4 +65,5 @@ public interface HierarchyCell extends ComboBoxCell {
 
 		return ordered.toArray(new HierarchyCell[ordered.size()]);
 	}
+
 }

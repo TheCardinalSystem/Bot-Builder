@@ -92,4 +92,31 @@ public class FileCell implements HierarchyCell {
 		Arrays.stream(getChildren()).forEach(c -> c.close(listIn, textDisplay));
 	}
 
+	public static HierarchyCell getAbstractCell(String name) {
+		return new HierarchyCell() {
+
+			@Override
+			public String getName() {
+				return name;
+			}
+
+			@Override
+			public ImageIcon getIcon() {
+				return ICON;
+			}
+
+			@Override
+			public void open(JList<HierarchyCell> listIn, EditorTextField textDisplay, HierarchyCellHandler handlerIn) {
+			}
+
+			@Override
+			public HierarchyCell[] getChildren() {
+				return null;
+			}
+
+			@Override
+			public void close(JList<HierarchyCell> listIn, EditorTextField textDisplay) {
+			}
+		};
+	}
 }

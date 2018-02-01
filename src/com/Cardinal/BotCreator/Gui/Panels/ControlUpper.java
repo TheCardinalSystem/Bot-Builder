@@ -66,14 +66,14 @@ public class ControlUpper extends JPanel {
 		this.add(new JScrollPane(operations), BorderLayout.CENTER);
 		this.addCell(new EventCell());
 		operations.addMouseListener(new MouseAdapter() {
-		    public void mouseClicked(MouseEvent evt) {
-		        if(evt.getClickCount() >= 2) {
-		        	if(!operations.isSelectionEmpty()) {
-		        		parent.getLower().addCell(operations.getSelectedValue());
-		        		operations.clearSelection();
-		        	}
-		        }
-		    }
+			public void mouseClicked(MouseEvent evt) {
+				if (evt.getClickCount() >= 2) {
+					if (!operations.isSelectionEmpty()) {
+						parent.getLower().addCell(operations.getSelectedValue());
+						operations.clearSelection();
+					}
+				}
+			}
 		});
 	}
 

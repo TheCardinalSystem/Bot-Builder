@@ -33,6 +33,7 @@ public class ControlLower extends JPanel {
 	 * accessible by name.
 	 */
 	private HashMap<String, ComboBoxCell> cells = new HashMap<String, ComboBoxCell>();
+
 	/**
 	 * Constructs a new {@link ControlLower} ({@linkplain JPanel}). The layout will
 	 * be constructed with the specified gaps between components.
@@ -61,6 +62,7 @@ public class ControlLower extends JPanel {
 	public ControlPanel getParent() {
 		return parent;
 	}
+
 	/**
 	 * Adds a cell to the operations menu.
 	 * 

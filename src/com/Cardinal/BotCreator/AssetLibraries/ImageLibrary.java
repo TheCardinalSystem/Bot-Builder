@@ -29,7 +29,11 @@ public enum ImageLibrary {
 	/**
 	 * The Eclipse "search match" icon.
 	 */
-	YELLOW_ARROW("Icons/searchm_obj.png");
+	YELLOW_ARROW("Icons/searchm_obj.png"),
+	/**
+	 * The Eclipse "add" icon.
+	 */
+	GREEN_PLUS("Icons/add_correction.png");
 
 	/**
 	 * The image instance of 'this'.

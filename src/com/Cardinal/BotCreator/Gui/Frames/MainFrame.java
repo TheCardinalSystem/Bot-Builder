@@ -27,6 +27,8 @@ public class MainFrame extends JFrame {
 
 	private static final long serialVersionUID = -5257853932889784209L;
 
+	private VisualPanel visual;
+
 	/**
 	 * Constructs a new {@link JFrame} with a
 	 * {@link DefaultMenuBar}-{@link JMenuBar}, a {@link ControlPanel}, and a
@@ -56,8 +58,11 @@ public class MainFrame extends JFrame {
 		this.setLayout(new BorderLayout());
 		this.setJMenuBar(new DefaultMenuBar());
 		this.add(new ControlPanel(5, 5, this), BorderLayout.EAST);
-		this.add(new VisualPanel(), BorderLayout.CENTER);
+		this.add((visual = new VisualPanel()), BorderLayout.CENTER);
 		this.setVisible(true);
 	}
 
+	public VisualPanel getVisualPanel() {
+		return this.visual;
+	}
 }
