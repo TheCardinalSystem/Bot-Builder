@@ -163,6 +163,10 @@ public class VisualPanel extends JPanel implements HierarchyCellHandler {
 		return null;
 	}
 
+	public JList<HierarchyCell> getList() {
+		return this.methods;
+	}
+
 	/**
 	 * The default click listener for the cell list.
 	 * 

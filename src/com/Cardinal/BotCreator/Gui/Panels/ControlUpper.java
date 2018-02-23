@@ -111,4 +111,8 @@ public class ControlUpper extends JPanel {
 		((DefaultListModel<ComboBoxCell>) operations.getModel()).removeElement(cells.get(name));
 		return cells.remove(name);
 	}
+
+	public JList<ComboBoxCell> getList() {
+		return this.operations;
+	}
 }

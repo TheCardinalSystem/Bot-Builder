@@ -28,6 +28,9 @@ public class MainFrame extends JFrame {
 	private static final long serialVersionUID = -5257853932889784209L;
 
 	private VisualPanel visual;
+	private ControlPanel control;
+	@SuppressWarnings("unused")
+	private DefaultMenuBar menu;
 
 	/**
 	 * Constructs a new {@link JFrame} with a
@@ -56,13 +59,44 @@ public class MainFrame extends JFrame {
 
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLayout(new BorderLayout());
-		this.setJMenuBar(new DefaultMenuBar());
-		this.add(new ControlPanel(5, 5, this), BorderLayout.EAST);
+		this.setJMenuBar((menu = new DefaultMenuBar()));
+		this.add((control = new ControlPanel(5, 5, this)), BorderLayout.EAST);
 		this.add((visual = new VisualPanel()), BorderLayout.CENTER);
+
+		/*
+		 * Not liking this. Cannot figure out why it wont work... FrameMouseListener
+		 * listener = new FrameMouseListener(this); control.addMouseListener(listener);
+		 * visual.addMouseListener(listener); menu.addMouseListener(listener);
+		 */
+
 		this.setVisible(true);
 	}
 
 	public VisualPanel getVisualPanel() {
 		return this.visual;
 	}
+
+	public ControlPanel getControlPanel() {
+		return this.control;
+	}
+
+	/*
+	 * private class FrameMouseListener extends MouseAdapter { private MainFrame
+	 * frame;
+	 * 
+	 * protected FrameMouseListener(MainFrame frameIn) { this.frame = frameIn; }
+	 * 
+	 * @Override public void mouseClicked(MouseEvent e) { if
+	 * (!inBounds(frame.getControlPanel().getLower().getList(), e.getPoint())) {
+	 * frame.getControlPanel().getLower().getList().clearSelection(); } if
+	 * (!inBounds(frame.getControlPanel().getUpper().getList(), e.getPoint())) {
+	 * frame.getControlPanel().getUpper().getList().clearSelection(); } if
+	 * (!inBounds(frame.getVisualPanel().getList(), e.getPoint())) {
+	 * frame.getVisualPanel().getList().clearSelection(); } }
+	 * 
+	 * private boolean inBounds(JList<?> list, Point p) { for (int i = 0; i <
+	 * list.getModel().getSize(); i++) { if
+	 * (list.getComponentAt(list.indexToLocation(i)).contains(p)) { return true; } }
+	 * return false; } }
+	 */
 }

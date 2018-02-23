@@ -25,7 +25,7 @@ public class ControlLower extends JPanel {
 	private JList<ComboBoxCell> operations = new JList<ComboBoxCell>(new DefaultListModel<ComboBoxCell>());
 	public JScrollPane scrollPane;
 	/**
-	 * The parent pawnel of this panel.
+	 * The parent panel of this panel.
 	 */
 	private ControlPanel parent;
 	/**
@@ -87,5 +87,9 @@ public class ControlLower extends JPanel {
 	public ComboBoxCell removeCell(String name) {
 		((DefaultListModel<ComboBoxCell>) operations.getModel()).removeElement(cells.get(name));
 		return cells.remove(name);
+	}
+
+	public JList<ComboBoxCell> getList() {
+		return this.operations;
 	}
 }

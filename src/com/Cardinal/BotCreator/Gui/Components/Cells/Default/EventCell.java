@@ -5,8 +5,6 @@ import javax.swing.ImageIcon;
 import com.Cardinal.BotCreator.AssetLibraries.ImageLibrary;
 import com.Cardinal.BotCreator.Gui.Components.Cells.ComboBoxCell;
 
-import sx.blah.discord.api.events.EventSubscriber;
-
 /**
  * A {@link ComboBoxCell} used to represent {@link EventSubscriber
  * EventSubscriber} instances.

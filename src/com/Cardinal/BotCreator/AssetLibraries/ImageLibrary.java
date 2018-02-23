@@ -8,6 +8,8 @@ import java.nio.file.Paths;
 
 import javax.imageio.ImageIO;
 
+import com.Cardinal.BotCreator.lang.ResourceLoadException;
+
 /**
  * The library of (default) image assets available for usage. Some images are
  * from Eclipse: <a href=
@@ -38,7 +40,7 @@ public enum ImageLibrary {
 	/**
 	 * The image instance of 'this'.
 	 */
-	private final Image IMAGE;
+	private Image IMAGE;
 
 	/**
 	 * Sets the image instance of 'this'.
@@ -47,7 +49,7 @@ public enum ImageLibrary {
 	 *            the location of the image in the 'assets' resource folder.
 	 */
 	private ImageLibrary(String path) {
-		Image img;
+		Image img = null;
 		try {
 			Path p = Paths.get(this.getClass().getResource(".").toURI());
 			for (int i = 0; i < 4; i++) {
@@ -56,8 +58,7 @@ public enum ImageLibrary {
 			p = p.resolve("assets/Images/" + path);
 			img = ImageIO.read(p.toUri().toURL());
 		} catch (IOException | URISyntaxException e) {
-			e.printStackTrace();
-			img = null;
+			new ResourceLoadException(path, e).printStackTrace();
 		}
 		this.IMAGE = img;
 	}
@@ -66,8 +67,11 @@ public enum ImageLibrary {
 	 * Gets the image instance of 'this'.
 	 * 
 	 * @return the image instance of 'this'.
+	 * @throws ResourceLoadException
+	 *             thrown if the image was unable to load.
 	 */
 	public Image getImage() {
 		return this.IMAGE;
 	}
+
 }
